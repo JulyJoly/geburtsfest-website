@@ -1,19 +1,18 @@
-# GeburtsFest website — starter preview
+# GeburtsFest — Vercel-ready website
 
-Bilingual Next.js website starter for Vercel. This is **not yet a faithful Wix reproduction**: the current styling and wording are temporary until original Wix assets and text are migrated.
+Responsive bilingual (English/German) Next.js website. Uses the original GeburtsFest logo and original photograph, not an AI-generated replacement.
 
-## Deploy
-1. Upload all files and directories to the GitHub repository root (not inside an extra folder).
-2. Import the GitHub repository in Vercel, or redeploy if already imported.
-3. Framework preset: Next.js. No environment variables required.
-4. Preview `/en` and `/de` on your `vercel.app` URL.
+## Deploy on Vercel
+1. Unzip this folder and upload it to a new GitHub repository.
+2. In Vercel, select **Add New → Project**, import that GitHub repository and click **Deploy**. Vercel detects Next.js automatically.
+3. Test both `/en` and `/de` and all links before connecting your domain.
+4. In Vercel Project → Settings → Domains, add your existing domain. Update DNS records at your domain registrar using the exact instructions Vercel displays. Do not cancel Wix/domain service until DNS and email have been verified.
 
-## Media
-- Main YouTube video: `xu9F17W83Tc`.
-- Additional video and photo slots are placeholders, not real festival footage.
-- Replace placeholders with authorized event media when available.
+## Before publishing
+- This is a reconstruction from supplied screenshots, not an export of Wix source code. Review all copy, layout, translations and historical event details.
+- The contact button opens an email to geburtsfest@gmail.com; it does **not** send a form submission. If a web form is desired, connect a form backend (e.g. Formspree) before going live.
+- The 2026 event has already taken place. No current ticket booking is advertised; add a verified ticket URL when a new event is scheduled.
+- Add current speakers, schedule and privacy/legal pages as appropriate before public launch.
 
-## Domains (only after reviewing preview)
-- Add `geburtsfest.com`, `www.geburtsfest.com`, `geburtsfest.li`, `www.geburtsfest.li` in Vercel project settings.
-- The root URL chooses English for .com and German for .li; language switcher links to language paths on the current domain.
-- Do not cancel Wix or change DNS until the new website is approved.
+## Local development
+`npm install` then `npm run dev`.
