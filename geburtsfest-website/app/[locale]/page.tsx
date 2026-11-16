@@ -103,8 +103,6 @@ export default async function Page({
 
       <section id="home" className="hero">
         <span className="eyebrow">GEBURTSFEST</span>
-        <h1>{t.hero}</h1>
-        <p>{t.tag}</p>
 
         <img
           src="/julyjoly_spiritual_birth_and_natural_birth_of_a_baby_blue_ton_5efce4ce-ce6a-434b-901c-02fb65de76e8_2 (1).png"
@@ -117,6 +115,9 @@ export default async function Page({
             margin: '32px auto'
           }}
         />
+
+        <h1>{t.hero}</h1>
+        <p>{t.tag}</p>
 
         <a className="button" href="#about">
           {locale === 'en' ? 'Discover our story' : 'Unsere Geschichte'}
@@ -134,6 +135,7 @@ export default async function Page({
           <p>{t.story}</p>
           <p className="signature">{t.founders}</p>
         </div>
+
         <Image
           className="founders"
           src="/founders.jpg"
@@ -183,12 +185,14 @@ export default async function Page({
           <h2>{t.contact}</h2>
           <p>geburtsfest@gmail.com</p>
         </div>
+
         <div className="contact-panel">
           <p>
             {locale === 'en'
               ? 'Questions, ideas or collaboration? We would love to hear from you.'
               : 'Fragen, Ideen oder Interesse an einer Zusammenarbeit? Wir freuen uns über deine Nachricht.'}
           </p>
+
           <a className="button" href="mailto:geburtsfest@gmail.com">
             {t.send}
           </a>
