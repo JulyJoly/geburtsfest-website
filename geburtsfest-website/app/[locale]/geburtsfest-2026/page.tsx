@@ -8,7 +8,7 @@ const schedule = [
       "A two-hour interactive workshop exploring how to nourish and support women through pregnancy, birth and postpartum — through doula care, nutrition, herbal wisdom, community and practical support.",
     image: "/workshop.png",
     imagePosition: "center center",
-    preCropped: true,
+    canvaImage: true,
   },
   {
     time: "14:00 - 14:45",
@@ -18,7 +18,7 @@ const schedule = [
       "An exploration of traditional midwifery, weaving together ancestral knowledge, natural approaches and the wisdom of the female body to support women through pregnancy, birth and postpartum.",
     image: "/nathalie-schunko.png",
     imagePosition: "center center",
-    preCropped: true,
+    canvaImage: true,
   },
   {
     time: "15:00 - 15:45",
@@ -28,7 +28,7 @@ const schedule = [
       "An exploration of how the spaces in which we give birth influence our experience, and how architecture, natural materials and thoughtful design can create healthier, more supportive environments for mothers, babies and future generations.",
     image: "/monja-kroetz.jpeg",
     imagePosition: "center 30%",
-    preCropped: false,
+    canvaImage: false,
   },
   {
     time: "16:00 - 16:45",
@@ -38,7 +38,7 @@ const schedule = [
       "An exploration of how unconscious fears, beliefs and karmic patterns can be passed through generations, and how greater awareness may help parents recognise and release these patterns to give their children greater freedom.",
     image: "/christian-reuter.webp",
     imagePosition: "center center",
-    preCropped: false,
+    canvaImage: false,
   },
 ];
 
@@ -103,20 +103,34 @@ export default function GeburtsFest2026Page() {
               </p>
             </div>
 
-            <img
-              src={item.image}
-              alt={item.speaker}
-              className="program-photo"
+            <div
+              className="program-photo-frame"
               style={{
-                width: "200px",
-                height: "200px",
-                borderRadius: item.preCropped ? "0" : "50%",
-                objectFit: item.preCropped ? "contain" : "cover",
-                objectPosition: item.imagePosition,
-                display: "block",
+                width: 200,
+                height: 200,
+                borderRadius: "50%",
+                overflow: "hidden",
+                position: "relative",
                 marginLeft: "auto",
+                flexShrink: 0,
               }}
-            />
+            >
+              <img
+                src={item.image}
+                alt={item.speaker}
+                style={{
+                  position: "absolute",
+                  width: item.canvaImage ? "275%" : "100%",
+                  height: item.canvaImage ? "275%" : "100%",
+                  maxWidth: "none",
+                  top: "50%",
+                  left: "50%",
+                  transform: "translate(-50%, -50%)",
+                  objectFit: "cover",
+                  objectPosition: item.imagePosition,
+                }}
+              />
+            </div>
           </article>
         ))}
       </section>
@@ -154,7 +168,7 @@ export default function GeburtsFest2026Page() {
             gap: 16px !important;
           }
 
-          .program-photo {
+          .program-photo-frame {
             margin: 10px auto 0 !important;
             width: 180px !important;
             height: 180px !important;
