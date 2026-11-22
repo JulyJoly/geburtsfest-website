@@ -17,8 +17,9 @@ const copy = {
     valuesText: 'Home birth. Birth centre. Hospital. With a midwife. With a doula. With a partner. With medical support when wanted or needed. There is no single right way to give birth.',
     manifesto: 'Our Manifesto',
     manifestoText: 'Birth is more than a moment. A child is born. A mother is born. A family takes a new shape. We believe women deserve to understand their bodies, ask questions, be listened to, know their options, and make informed choices. We believe mothers were never meant to do this alone. GeburtsFest is our invitation to gather again — to question, listen and learn from one another.',
-    program: 'Program & speakers',
-    programText: 'Talks, workshops, encounters and exchange. Information about future gatherings will be announced here.',
+    program: 'GeburtsFest 2026',
+    programText: 'Discover the talks, workshops and inspiring encounters from our 2026 gathering.',
+    programButton: 'View the 2026 Program',
     faq: 'Frequently asked questions',
     contact: 'Connect with us',
     send: 'Write us an email',
@@ -43,8 +44,9 @@ const copy = {
     valuesText: 'Hausgeburt. Geburtshaus. Krankenhaus. Mit Hebamme. Mit Doula. Mit Partner oder Partnerin. Mit medizinischer Unterstützung, wenn sie gewünscht oder notwendig ist. Es gibt nicht den einen richtigen Weg zu gebären.',
     manifesto: 'Unser Manifest',
     manifestoText: 'Geburt ist mehr als ein Moment. Ein Kind wird geboren. Eine Mutter wird geboren. Eine Familie verändert sich. Wir glauben, dass Frauen ihren Körper verstehen, Fragen stellen, gehört werden, ihre Möglichkeiten kennen und selbstbestimmte Entscheidungen treffen dürfen. Mütter sollten diesen Weg nicht allein gehen müssen. GeburtsFest lädt uns ein, wieder zusammenzukommen – Fragen zu stellen, zuzuhören und voneinander zu lernen.',
-    program: 'Programm & Mitwirkende',
-    programText: 'Vorträge, Workshops, Begegnungen und Austausch. Informationen zu kommenden Veranstaltungen veröffentlichen wir hier.',
+    program: 'GeburtsFest 2026',
+    programText: 'Entdecke die Vorträge, Workshops und Begegnungen unseres GeburtsFestes 2026.',
+    programButton: 'Programm 2026 ansehen',
     faq: 'Häufige Fragen',
     contact: 'Kontakt',
     send: 'E-Mail schreiben',
@@ -74,25 +76,33 @@ export default async function Page({
   }
 
   const t = copy[locale];
-  const ids = ['home', 'program', 'speakers', 'about', 'faq', 'contact'];
+
+  const navigation = [
+    { label: t.nav[0], href: `/${locale}` },
+    { label: t.nav[1], href: `/${locale}/geburtsfest-2026` },
+    { label: t.nav[2], href: `/${locale}/geburtsfest-2026` },
+    { label: t.nav[3], href: `/${locale}/about` },
+    { label: t.nav[4], href: '#faq' },
+    { label: t.nav[5], href: '#contact' }
+  ];
 
   return (
     <main>
       <header className="header">
-        <a href="#home" className="brand">
+        <Link href={`/${locale}`} className="brand">
           <Image
             src="/logo.webp"
             width={74}
             height={74}
             alt="GeburtsFest logo"
           />
-        </a>
+        </Link>
 
         <nav>
-          {t.nav.map((n, i) => (
-            <a key={n} href={'#' + ids[i]}>
-              {n}
-            </a>
+          {navigation.map((item) => (
+            <Link key={item.label} href={item.href}>
+              {item.label}
+            </Link>
           ))}
         </nav>
 
@@ -119,9 +129,9 @@ export default async function Page({
         <h1>{t.hero}</h1>
         <p>{t.tag}</p>
 
-        <a className="button" href="#about">
+        <Link className="button" href={`/${locale}/about`}>
           {locale === 'en' ? 'Discover our story' : 'Unsere Geschichte'}
-        </a>
+        </Link>
       </section>
 
       <section className="section centered">
@@ -134,6 +144,9 @@ export default async function Page({
           <h2>{t.about}</h2>
           <p>{t.story}</p>
           <p className="signature">{t.founders}</p>
+          <Link className="button" href={`/${locale}/about`}>
+            {locale === 'en' ? 'Read our story' : 'Unsere Geschichte lesen'}
+          </Link>
         </div>
 
         <Image
@@ -162,12 +175,18 @@ export default async function Page({
       </section>
 
       <section id="program" className="section centered blue">
-        <span id="speakers" className="anchor" />
         <h2>{t.program}</h2>
         <p className="lead">{t.programText}</p>
         <p className="note">
           GeburtsFest 2026 · 29 August · Küefer-Martis-Huus, Ruggell, Liechtenstein
         </p>
+
+        <Link
+          className="button"
+          href={`/${locale}/geburtsfest-2026`}
+        >
+          {t.programButton}
+        </Link>
       </section>
 
       <section id="faq" className="section faq">
