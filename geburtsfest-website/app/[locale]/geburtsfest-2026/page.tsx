@@ -7,6 +7,7 @@ const schedule = [
     description:
       "A two-hour interactive workshop exploring how to nourish and support women through pregnancy, birth and postpartum — through doula care, nutrition, herbal wisdom, community and practical support.",
     image: "/workshop-2026.jpeg",
+    imagePosition: "center 15%",
   },
   {
     time: "14:00 - 14:45",
@@ -15,6 +16,7 @@ const schedule = [
     description:
       "An exploration of traditional midwifery, weaving together ancestral knowledge, natural approaches and the wisdom of the female body to support women through pregnancy, birth and postpartum.",
     image: "/natalie-schunko.jpg",
+    imagePosition: "center 25%",
   },
   {
     time: "15:00 - 15:45",
@@ -23,6 +25,7 @@ const schedule = [
     description:
       "An exploration of how the spaces in which we give birth influence our experience, and how architecture, natural materials and thoughtful design can create healthier, more supportive environments for mothers, babies and future generations.",
     image: "/monja-kroetz.jpeg",
+    imagePosition: "center 30%",
   },
   {
     time: "16:00 - 16:45",
@@ -31,6 +34,7 @@ const schedule = [
     description:
       "An exploration of how unconscious fears, beliefs and karmic patterns can be passed through generations, and how greater awareness may help parents recognise and release these patterns to give their children greater freedom.",
     image: "/christian-reuter.webp",
+    imagePosition: "center center",
   },
 ];
 
@@ -52,6 +56,7 @@ export default function GeburtsFest2026Page() {
         {schedule.map((item) => (
           <article
             key={item.time}
+            className="program-entry"
             style={{
               display: "grid",
               gridTemplateColumns:
@@ -61,7 +66,6 @@ export default function GeburtsFest2026Page() {
               padding: "45px 0",
               borderBottom: "1px solid #c7e3f0",
             }}
-            className="program-entry"
           >
             <div
               style={{
@@ -85,9 +89,11 @@ export default function GeburtsFest2026Page() {
               >
                 {item.title}
               </h2>
+
               <p style={{ color: "#3389d3", margin: "0 0 8px" }}>
                 {item.speaker}
               </p>
+
               <p style={{ margin: 0, lineHeight: 1.55 }}>
                 {item.description}
               </p>
@@ -96,11 +102,13 @@ export default function GeburtsFest2026Page() {
             <img
               src={item.image}
               alt={item.speaker}
+              className="program-photo"
               style={{
-                width: "min(100%, 200px)",
-                aspectRatio: "1 / 1",
+                width: "200px",
+                height: "200px",
                 borderRadius: "50%",
                 objectFit: "cover",
+                objectPosition: item.imagePosition,
                 display: "block",
                 marginLeft: "auto",
               }}
@@ -113,7 +121,8 @@ export default function GeburtsFest2026Page() {
         className="section blue"
         style={{
           display: "grid",
-          gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+          gridTemplateColumns:
+            "repeat(auto-fit, minmax(250px, 1fr))",
           gap: 70,
         }}
       >
@@ -125,6 +134,7 @@ export default function GeburtsFest2026Page() {
             new perspectives.
           </p>
         </div>
+
         <div>
           <h2 style={{ fontSize: 34 }}>How to Join</h2>
           <p>
@@ -139,9 +149,11 @@ export default function GeburtsFest2026Page() {
             grid-template-columns: 1fr !important;
             gap: 16px !important;
           }
-          .program-entry img {
+
+          .program-photo {
             margin: 10px auto 0 !important;
             width: 180px !important;
+            height: 180px !important;
           }
         }
       `}</style>
