@@ -6,8 +6,9 @@ const schedule = [
     speaker: "Laura Ospelt, Lisa Allmayer, Natalie Frick",
     description:
       "A two-hour interactive workshop exploring how to nourish and support women through pregnancy, birth and postpartum — through doula care, nutrition, herbal wisdom, community and practical support.",
-    image: "/workshop-2026.jpeg",
-    imagePosition: "center 15%",
+    image: "/workshop.png",
+    imagePosition: "center center",
+    preCropped: true,
   },
   {
     time: "14:00 - 14:45",
@@ -15,8 +16,9 @@ const schedule = [
     speaker: "Natalie Schunko",
     description:
       "An exploration of traditional midwifery, weaving together ancestral knowledge, natural approaches and the wisdom of the female body to support women through pregnancy, birth and postpartum.",
-    image: "/natalie-schunko.jpg",
-    imagePosition: "center 25%",
+    image: "/nathalie-schunko.png",
+    imagePosition: "center center",
+    preCropped: true,
   },
   {
     time: "15:00 - 15:45",
@@ -26,6 +28,7 @@ const schedule = [
       "An exploration of how the spaces in which we give birth influence our experience, and how architecture, natural materials and thoughtful design can create healthier, more supportive environments for mothers, babies and future generations.",
     image: "/monja-kroetz.jpeg",
     imagePosition: "center 30%",
+    preCropped: false,
   },
   {
     time: "16:00 - 16:45",
@@ -35,6 +38,7 @@ const schedule = [
       "An exploration of how unconscious fears, beliefs and karmic patterns can be passed through generations, and how greater awareness may help parents recognise and release these patterns to give their children greater freedom.",
     image: "/christian-reuter.webp",
     imagePosition: "center center",
+    preCropped: false,
   },
 ];
 
@@ -106,8 +110,8 @@ export default function GeburtsFest2026Page() {
               style={{
                 width: "200px",
                 height: "200px",
-                borderRadius: "50%",
-                objectFit: "cover",
+                borderRadius: item.preCropped ? "0" : "50%",
+                objectFit: item.preCropped ? "contain" : "cover",
                 objectPosition: item.imagePosition,
                 display: "block",
                 marginLeft: "auto",
