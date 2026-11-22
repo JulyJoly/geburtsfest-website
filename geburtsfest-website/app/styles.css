@@ -1,1 +1,122 @@
 :root{--ink:#303b4d;--sky:#eaf6fc;--paper:#f8fafc;--blue:#3389d3}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:18px;line-height:1.65}a{color:inherit}.header{min-height:100px;padding:12px 4%;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand img{object-fit:contain}.header nav{display:flex;gap:clamp(12px,3vw,55px);flex-wrap:wrap;justify-content:center}.header nav a,.lang{text-decoration:none;font-size:16px}.header nav a:hover{text-decoration:underline}.lang{border:1px solid #c7d7e4;padding:6px 12px;border-radius:20px}.hero{min-height:600px;background:var(--sky);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:85px 24px}.eyebrow{letter-spacing:.25em;font-size:13px}.hero h1{font:normal clamp(56px,8vw,120px)/1.07 Georgia,serif;max-width:1050px;margin:26px auto}.hero p{font-size:22px;margin:0 0 32px}.button{background:var(--blue);color:white;text-decoration:none;border-radius:40px;padding:13px 30px;display:inline-block;font-size:16px}.button:hover{background:#236eaf}.section{padding:110px max(6%,24px);scroll-margin-top:25px}.section h2{font:normal clamp(38px,5.6vw,75px)/1.14 Georgia,serif;margin:0 0 36px}.centered{text-align:center}.centered>p{max-width:920px;margin:20px auto}.lead{font-size:clamp(19px,2.1vw,27px);line-height:1.7}.split{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:7%;max-width:1500px;margin:auto}.split p{max-width:650px}.signature{margin-top:32px}.founders{width:100%;height:auto;max-height:640px;object-fit:contain;object-position:center}.blue{background:var(--sky)}.manifesto>p{max-width:800px;font-size:22px}.manifesto .closing-line{font-family:Georgia,serif;font-size:29px;margin-top:60px}.note{font-size:15px;opacity:.7}.anchor{display:block;position:relative;top:-40px}.faq{max-width:1100px;margin:auto}.faq details{border-bottom:1px solid #cdd9e2;padding:20px 4px}.faq summary{cursor:pointer;font-size:22px;font-weight:500}.faq details p{max-width:850px}.contact{display:grid;grid-template-columns:1fr 1fr;gap:7%;align-items:center}.contact-panel{background:var(--sky);padding:55px}.contact-panel p{margin-top:0}footer{padding:35px 5%;display:flex;align-items:center;justify-content:space-between;gap:25px;font-size:14px;flex-wrap:wrap}footer img{object-fit:contain}@media(max-width:850px){.header{flex-wrap:wrap;justify-content:center}.header nav{order:3;width:100%;gap:16px}.header nav a{font-size:14px}.hero{min-height:480px}.section{padding:75px 7%}.split,.contact{grid-template-columns:1fr}.founders{max-height:550px}.contact-panel{padding:30px}.faq summary{font-size:19px}}
+
+/* GEBURTSFEST ABOUT PAGE */
+
+.about-manifesto,
+.about-story {
+  padding: 80px 5%;
+}
+
+.about-manifesto h1,
+.about-story h2,
+.about-choice h2 {
+  font: normal clamp(42px, 5vw, 72px)/1.15 Georgia, serif;
+  margin: 0 0 65px;
+}
+
+.about-manifesto-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 6%;
+  align-items: start;
+}
+
+.about-manifesto-text {
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.45;
+}
+
+.about-manifesto-text p {
+  margin: 0;
+}
+
+.about-manifesto-logo {
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 40px;
+}
+
+.about-manifesto-logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.about-story-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7%;
+  align-items: center;
+}
+
+.about-story-text {
+  max-width: 600px;
+  margin: auto;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.about-story-text p {
+  margin: 0;
+}
+
+.about-story-text .about-signature {
+  margin-top: 35px;
+}
+
+.about-story-image {
+  width: 100%;
+  height: auto;
+  max-height: 680px;
+  object-fit: contain;
+}
+
+.about-choice {
+  background: var(--sky);
+  text-align: center;
+  padding: 120px 8%;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.about-choice h2 {
+  margin-bottom: 55px;
+}
+
+.about-choice p {
+  max-width: 1050px;
+  margin: 0 auto 28px;
+}
+
+@media (max-width: 850px) {
+  .about-manifesto,
+  .about-story {
+    padding: 65px 7%;
+  }
+
+  .about-manifesto-layout,
+  .about-story-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-manifesto-logo {
+    position: static;
+    order: -1;
+  }
+
+  .about-manifesto-logo img {
+    width: 180px;
+    height: auto;
+  }
+
+  .about-manifesto-text,
+  .about-story-text,
+  .about-choice {
+    font-size: 17px;
+  }
+
+  .about-choice {
+    padding: 80px 7%;
+  }
+}
