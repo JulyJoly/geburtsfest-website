@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 const navigation = {
   en: [
     { label: "Home", path: "" },
-    { label: "Program", path: "/geburtsfest-2026" },
+    { label: "GF 2026", path: "/geburtsfest-2026" },
     { label: "Speakers", path: "/geburtsfest-2026-speakers" },
     { label: "About", path: "/about" },
     { label: "FAQ", path: "/geburtsfest-2026-faq" },
@@ -15,7 +15,7 @@ const navigation = {
   ],
   de: [
     { label: "Startseite", path: "" },
-    { label: "Programm", path: "/geburtsfest-2026" },
+    { label: "GF 2026", path: "/geburtsfest-2026" },
     { label: "Referent:innen", path: "/geburtsfest-2026-speakers" },
     { label: "Über uns", path: "/about" },
     { label: "FAQ", path: "/geburtsfest-2026-faq" },
