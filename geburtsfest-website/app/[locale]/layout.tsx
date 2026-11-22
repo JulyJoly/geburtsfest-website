@@ -10,7 +10,7 @@ const navigation = {
     { label: "Program", path: "/geburtsfest-2026" },
     { label: "Speakers", path: "/geburtsfest-2026-speakers" },
     { label: "About", path: "/about" },
-    { label: "FAQ", path: "/who-is-it-for" },
+    { label: "FAQ", path: "/geburtsfest-2026-faq" },
     { label: "Contact", path: "/contact" },
   ],
   de: [
@@ -18,7 +18,7 @@ const navigation = {
     { label: "Programm", path: "/geburtsfest-2026" },
     { label: "Referent:innen", path: "/geburtsfest-2026-speakers" },
     { label: "Über uns", path: "/about" },
-    { label: "FAQ", path: "/who-is-it-for" },
+    { label: "FAQ", path: "/geburtsfest-2026-faq" },
     { label: "Kontakt", path: "/contact" },
   ],
 };
@@ -51,7 +51,10 @@ export default async function LocaleLayout({
           />
         </Link>
 
-        <nav className="site-navigation" aria-label="Main navigation">
+        <nav
+          className="site-navigation"
+          aria-label="Main navigation"
+        >
           {menu.map((item) => (
             <Link
               key={item.label}
@@ -177,4 +180,3 @@ export default async function LocaleLayout({
     </>
   );
 }
-
